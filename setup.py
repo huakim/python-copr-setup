@@ -1,6 +1,6 @@
 from setuptools import setup
 import os
-value = open('variant.txt', 'r').read()
+value = open('variant.txt', 'r').read().strip()
 
 args={}
 if value == 'gui':
