@@ -25,11 +25,11 @@ if urlval == 'wxpython':
 setup(
  description = "Copr package build gui tools",
  summary = "Copr package build gui tools",
- version = "0.0.9",
+ version = "0.1.0",
  license = "GPLv3",
  name = f"copr_{value}",
  python_name = f"python-copr-{value}",
- url = f"https://github.com/huakim/python-copr_{value}",
+ url = f"https://github.com/huakim/python-copr_{urlval}",
  archive_name = f"copr_{value}", **args
 )
 
