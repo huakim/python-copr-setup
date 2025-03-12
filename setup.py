@@ -18,15 +18,18 @@ else:
 #    args['package_dir'] = {pkgname: f'copr_gui/generic/{value}'}
     args['install_requires'] = ['copr_gui', value]
 
+urlval = value
+if urlval == 'wxpython':
+  urlval = 'wx'
 
 setup(
  description = "Copr package build gui tools",
  summary = "Copr package build gui tools",
- version = "0.0.8",
+ version = "0.0.9",
  license = "GPLv3",
  name = f"copr_{value}",
  python_name = f"python-copr-{value}",
- url = "https://pagure.io/matrix/python-copr-wx",
+ url = f"https://github.com/huakim/python-copr_{value}",
  archive_name = f"copr_{value}", **args
 )
 
