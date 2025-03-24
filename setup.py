@@ -17,6 +17,11 @@ else:
     args['packages'] = [pkgname]
 #    args['package_dir'] = {pkgname: f'copr_gui/generic/{value}'}
     args['install_requires'] = ['copr_gui', value]
+    args['entry_points'] = {
+        'console_scripts': [
+            f'copr-{value}=copr_gui.generic.{value}.launcher:main'
+        ]
+    }
 
 urlval = value
 if urlval == 'wxpython':
@@ -25,7 +30,7 @@ if urlval == 'wxpython':
 setup(
  description = "Copr package build gui tools",
  summary = "Copr package build gui tools",
- version = "0.1.2",
+ version = "0.1.3",
  license = "GPLv3",
  name = f"copr_{value}",
  python_name = f"python-copr-{value}",
