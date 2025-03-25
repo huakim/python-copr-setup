@@ -23,7 +23,7 @@ if urlval == "wxpython":
 setup(
     description="Copr package build gui tools",
     summary="Copr package build gui tools",
-    version="0.1.4",
+    version="0.1.5",
     license="GPLv3",
     name=f"copr_{value}",
     python_name=f"python-copr-{value}",
