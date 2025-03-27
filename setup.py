@@ -2,9 +2,9 @@ from setuptools import setup
 # import os
 try:
     import variant
-    args = variant.__dict__
+    variant = variant.__dict__
 except ImportError:
-    args = {}
+    variant = {}
 
 value = variant.get('name', 'gui')
 urlval = variant.get('urlval', value)
