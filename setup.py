@@ -1,7 +1,15 @@
 from setuptools import setup
 # import os
+try:
+    import variant
+    args = variant.__dict__
+except ImportError:
+    args = {}
 
-value = open("variant.txt", "r").read().strip()
+value = variant.get('name', 'gui')
+urlval = variant.get('urlval', value)
+url = variant.get('url', f"https://github.com/huakim/python-copr_{urlval}")
+script = variant.get('script', f"copr-{urlval}")
 
 args = {}
 if value == "gui":
@@ -13,12 +21,10 @@ else:
     #    args['package_dir'] = {pkgname: f'copr_gui/generic/{value}'}
     args["install_requires"] = ["copr_gui", value]
     args["entry_points"] = {
-        "console_scripts": [f"copr-{value}=copr_gui.generic.{value}.launcher:main"]
+        "console_scripts": [f"{script}=copr_gui.generic.{value}.launcher:main"]
     }
 
 urlval = value
-if urlval == "wxpython":
-    urlval = "wx"
 
 setup(
     description="Copr package build gui tools",
