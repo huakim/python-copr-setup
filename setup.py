@@ -35,7 +35,7 @@ urlval = value
 setup(
     description="Copr package build gui tools",
     summary="Copr package build gui tools",
-    version="0.1.7",
+    version="0.1.8",
     license="GPLv3",
     name=f"copr_{value}",
     python_name=f"python-copr-{value}",
